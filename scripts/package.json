@@ -1,0 +1,8 @@
+{
+  "name": "lotus-scripts",
+  "version": "1.0.0",
+  "private": true,
+  "bin": {
+    "lotus-scripts": "bin/lotus-scripts.js"
+  }
+}
