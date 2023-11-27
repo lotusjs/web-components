@@ -85,4 +85,46 @@ async function buildTheDocs(watch = false) {
     await Promise.all([deleteAsync(sitedir), ...bundleDirectories.map(dir => deleteAsync(dir))]);
     await fs.mkdir(outdir, { recursive: true });
   });
+
+  if (serve) {
+    let result: ChildResult;
+
+    await nextTask('Building docs', async () => {
+      result = await buildTheDocs();
+    });
+
+    const bs = browserSync.create();
+    const port = await getPort({ port: portNumbers(4000, 4999) });
+    const browserSyncConfig = {
+      startPath: '/',
+      port,
+      logLevel: 'silent',
+      logPrefix: '[shoelace]',
+      logFileChanges: true,
+      notify: false,
+      single: false,
+      ghostMode: false,
+      server: {
+        baseDir: sitedir,
+        routes: {
+          // '/dist': './cdn'
+        }
+      }
+    };
+
+    bs.init(browserSyncConfig, () => {
+      const url = `http://localhost:${port}`;
+      console.log(chalk.cyan(`\n🥾 The dev server is available at ${url}`));
+
+      // Log deferred output
+      if (result.output.length > 0) {
+        console.log('\n' + result.output.join('\n'));
+      }
+
+      // Log output that comes later on
+      result.child.stdout.on('data', data => {
+        console.log(data.toString());
+      });
+    })
+  }
 })()

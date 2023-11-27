@@ -3,7 +3,7 @@ import ora from 'ora';
 
 const spinner = ora({ hideCursor: false }).start();
 
-export async function nextTask(label: string, action) {
+export async function nextTask(label: string, action: () => Promise<void>) {
   spinner.text = label;
   spinner.start();
 
