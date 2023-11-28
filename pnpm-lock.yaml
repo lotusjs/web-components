@@ -21,6 +21,9 @@ importers:
       '@open-wc/testing':
         specifier: ^4.0.0
         version: 4.0.0
+      '@types/mocha':
+        specifier: ^10.0.6
+        version: 10.0.6
       '@types/node':
         specifier: ^20.10.0
         version: 20.10.0
@@ -120,6 +123,9 @@ importers:
       typescript:
         specifier: ^5.3.2
         version: 5.3.2
+      user-agent-data-types:
+        specifier: ^0.4.2
+        version: 0.4.2
       zx:
         specifier: ^7.2.3
         version: 7.2.3
@@ -1372,6 +1378,10 @@ packages:
 
   /@types/minimist@1.2.5:
     resolution: {integrity: sha512-hov8bUuiLiyFPGyFPE1lwWhmzYbirOXQNNo40+y3zow8aFVTeyn3VWL0VFFfdNddA8S4Vf0Tc062rzyNr7Paag==}
+    dev: true
+
+  /@types/mocha@10.0.6:
+    resolution: {integrity: sha512-dJvrYWxP/UcXm36Qn36fxhUKu8A/xMRXVT2cliFF1Z7UA9liG5Psj3ezNSZw+5puH2czDXRLcXQxf8JbJt0ejg==}
     dev: true
 
   /@types/node@18.18.13:
@@ -6086,6 +6096,10 @@ packages:
     dependencies:
       querystringify: 2.2.0
       requires-port: 1.0.0
+    dev: true
+
+  /user-agent-data-types@0.4.2:
+    resolution: {integrity: sha512-jXep3kO/dGNmDOkbDa8ccp4QArgxR4I76m3QVcJ1aOF0B9toc+YtSXtX5gLdDTZXyWlpQYQrABr6L1L2GZOghw==}
     dev: true
 
   /util-deprecate@1.0.2:
