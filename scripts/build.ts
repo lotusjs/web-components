@@ -95,6 +95,8 @@ async function buildTheSource() {
       //
       // The whole shebang
       './src/lotus.ts',
+      // The auto-loader
+      './src/lotus-autoloader.ts',
       // Components
       ...(await globby('./src/components/**/!(*.(style|test)).ts')),
       // Translations
