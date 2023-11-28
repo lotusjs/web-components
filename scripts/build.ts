@@ -28,6 +28,7 @@ const outdir = 'dist';
 const cdndir = 'cdn';
 const sitedir = '_site';
 const execPromise = util.promisify(exec);
+let childProcess;
 let buildResults;
 
 const bundleDirectories = [cdndir, outdir];
@@ -138,6 +139,16 @@ async function buildTheSource() {
   }
 }
 
+function handleCleanup() {
+  buildResults.forEach(result => result.dispose());
+
+  if (childProcess) {
+    childProcess.kill('SIGINT');
+  }
+
+  process.exit();
+}
+
 (async () => {
   await nextTask('Cleaning up the previous build', async () => {
     await Promise.all([deleteAsync(sitedir), ...bundleDirectories.map(dir => deleteAsync(dir))]);
@@ -200,5 +211,31 @@ async function buildTheSource() {
         console.log(data.toString());
       });
     })
+
+    bs.watch('src/**/!(*.test).*').on('change', async filename => {
+      console.log('[build] File changed: ', filename);
+
+      try {
+        const isTheme = /^src\/themes/.test(filename);
+        const isStylesheet = /(\.css|\.styles\.ts)$/.test(filename);
+
+        // Rebuild the source
+        const rebuildResults = buildResults.map(result => result.rebuild());
+        await Promise.all(rebuildResults);
+
+        bs.reload();
+      } catch (err) {
+        console.error(chalk.red(err));
+      }
+    })
+
+    // Reload without rebuilding when the docs change
+    bs.watch([`${sitedir}/**/*.*`]).on('change', filename => {
+      bs.reload();
+    });
   }
+
+  // Cleanup on exit
+  process.on('SIGINT', handleCleanup);
+  process.on('SIGTERM', handleCleanup);
 })()
