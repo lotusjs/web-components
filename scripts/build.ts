@@ -15,6 +15,7 @@ import util from 'util';
 import { replace } from 'esbuild-plugin-replace';
 import { nextTask } from './utils';
 
+import type { BuildOptions } from 'esbuild';
 import type { ChildProcessWithoutNullStreams } from 'child_process';
 
 interface ChildResult {
@@ -27,6 +28,7 @@ const outdir = 'dist';
 const cdndir = 'cdn';
 const sitedir = '_site';
 const execPromise = util.promisify(exec);
+let buildResults;
 
 const bundleDirectories = [cdndir, outdir];
 
@@ -81,6 +83,59 @@ async function buildTheDocs(watch = false) {
   })
 }
 
+async function buildTheSource() {
+  const alwaysExternal = ['@lit/react', 'react'];
+
+  const cdnConfig: BuildOptions = {
+    format: 'esm',
+    target: 'es2017',
+    entryPoints: [
+      //
+      // NOTE: Entry points must be mapped in package.json > exports, otherwise users won't be able to import them!
+      //
+      // The whole shebang
+      './src/lotus.ts',
+      // Components
+      ...(await globby('./src/components/**/!(*.(style|test)).ts')),
+      // Translations
+      ...(await globby('./src/translations/**/*.ts')),
+      // Public utilities
+      ...(await globby('./src/utilities/**/!(*.(style|test)).ts')),
+      // Theme stylesheets
+      ...(await globby('./src/themes/**/!(*.test).ts')),
+      // React wrappers
+      ...(await globby('./src/react/**/*.ts'))
+    ],
+    outdir: cdndir,
+    chunkNames: 'chunks/[name].[hash]',
+    define: {
+      // Floating UI requires this to be set
+      'process.env.NODE_ENV': '"production"'
+    },
+    bundle: true,
+    external: alwaysExternal,
+    splitting: true,
+  }
+
+  const npmConfig: BuildOptions = {
+    ...cdnConfig,
+    external: undefined,
+    minify: false,
+    packages: 'external',
+    outdir
+  };
+
+  if (serve) {
+    // Use the context API to allow incremental dev builds
+    const contexts = await Promise.all([esbuild.context(cdnConfig), esbuild.context(npmConfig)]);
+    await Promise.all(contexts.map(context => context.rebuild()));
+    return contexts;
+  } else {
+    // Use the standard API for production builds
+    return await Promise.all([esbuild.build(cdnConfig), esbuild.build(npmConfig)]);
+  }
+}
+
 (async () => {
   await nextTask('Cleaning up the previous build', async () => {
     await Promise.all([deleteAsync(sitedir), ...bundleDirectories.map(dir => deleteAsync(dir))]);
@@ -93,6 +148,14 @@ async function buildTheDocs(watch = false) {
         return execPromise(`lotus-scripts make-metadata --outdir "${dir}"`);
       })
     );
+  });
+
+  await nextTask('Running the TypeScript compiler', () => {
+    return execPromise(`tsc --project ./tsconfig.prod.json --outdir "${outdir}"`);
+  });
+
+  await nextTask('Building source files', async () => {
+    buildResults = await buildTheSource();
   });
 
   if (serve) {
@@ -116,7 +179,7 @@ async function buildTheDocs(watch = false) {
       server: {
         baseDir: sitedir,
         routes: {
-          // '/dist': './cdn'
+          '/dist': './cdn'
         }
       }
     };

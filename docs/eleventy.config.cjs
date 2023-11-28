@@ -1,12 +1,28 @@
 const { JSDOM } = require('jsdom');
+const { customElementsManifest, getAllComponents } = require('./_utilities/cem.cjs');
 
 const shoelaceFlavoredMarkdown = require('./_utilities/markdown.cjs');
 const prettier = require('./_utilities/prettier.cjs');
 
 const assetsDir = 'assets';
+const cdndir = 'cdn';
+const npmdir = 'dist';
+const allComponents = getAllComponents();
+let hasBuiltSearchIndex = false;
 
 module.exports = function (eleventyConfig) {
+  // Global data
+  eleventyConfig.addGlobalData('baseUrl', 'https://lotus.xingkang.wang/');
   eleventyConfig.addGlobalData('layout', 'default');
+  eleventyConfig.addGlobalData('toc', true);
+  eleventyConfig.addGlobalData('meta', {
+    title: 'LotusDesign',
+    description: '基于 Web 标准构建的 UI 组件库（适用于所有框架）',
+    version: customElementsManifest.package.version,
+    components: allComponents,
+    cdndir,
+    npmdir
+  });
 
   // Layout aliases
   eleventyConfig.addLayoutAlias('default', 'default.njk');
