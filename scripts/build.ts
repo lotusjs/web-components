@@ -164,7 +164,7 @@ async function buildTheSource() {
     let result: ChildResult;
 
     await nextTask('Building docs', async () => {
-      result = await buildTheDocs();
+      result = await buildTheDocs(true);
     });
 
     const bs = browserSync.create();

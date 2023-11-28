@@ -56,6 +56,10 @@ module.exports = function (eleventyConfig) {
     return content;
   })
 
+  eleventyConfig.on('eleventy.after', () => {
+    console.log('[eleventy.after]');
+  });
+
   return {
     dir: {
       input: 'pages',

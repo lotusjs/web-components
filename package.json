@@ -5,7 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "lotus-scripts build --serve"
+    "start": "lotus-scripts build --serve",
+    "build": "lotus-scripts build"
   },
   "keywords": [],
   "author": "",
