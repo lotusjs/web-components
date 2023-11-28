@@ -1,17 +1,12 @@
-import { LitElement, css, html } from 'lit';
-import { property } from 'lit/decorators.js';
+import LButton from './button.component.js';
 
-export class Button extends LitElement {
-  static styles = css`
-    :host {
-      color: blue;
-    }
-  `;
+LButton.define('l-button');
 
-  @property()
-  name?: string = 'World';
+export default LButton;
+export * from './button.component.js';
 
-  render() {
-    return html`<p>Hello, ${this.name}!</p>`;
+declare global {
+  interface HTMLElementTagNameMap {
+    'l-button': LButton;
   }
 }

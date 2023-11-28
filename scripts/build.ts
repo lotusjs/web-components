@@ -1,3 +1,4 @@
+import 'zx/globals';
 import { deleteAsync } from 'del';
 import { exec, spawn } from 'child_process';
 import { globby } from 'globby';
@@ -86,6 +87,14 @@ async function buildTheDocs(watch = false) {
     await fs.mkdir(outdir, { recursive: true });
   });
 
+  await nextTask('Generating component metadata', () => {
+    return Promise.all(
+      bundleDirectories.map(dir => {
+        return execPromise(`lotus-scripts make-metadata --outdir "${dir}"`);
+      })
+    );
+  });
+
   if (serve) {
     let result: ChildResult;
 
@@ -94,7 +103,7 @@ async function buildTheDocs(watch = false) {
     });
 
     const bs = browserSync.create();
-    const port = await getPort({ port: portNumbers(4000, 4999) });
+    const port = await getPort({ port: portNumbers(8800, 8900) });
     const browserSyncConfig = {
       startPath: '/',
       port,

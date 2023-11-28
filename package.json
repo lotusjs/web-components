@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "基于 Web 标准构建的 UI 组件库（适用于所有框架）",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "start": "lotus-scripts build --serve"
   },
@@ -14,6 +15,7 @@
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
+    "@custom-elements-manifest/analyzer": "^0.8.4",
     "@open-wc/testing": "^4.0.0",
     "@types/node": "^20.10.0",
     "@web/dev-server-esbuild": "^0.3.6",
@@ -23,7 +25,10 @@
     "browser-sync": "^2.29.3",
     "chalk": "^4.0.0",
     "command-line-args": "^5.2.1",
+    "comment-parser": "^1.4.1",
     "cross-spawn": "^7.0.3",
+    "custom-element-jet-brains-integration": "^1.4.0",
+    "custom-element-vs-code-integration": "^1.2.1",
     "del": "^7.1.0",
     "esbuild": "^0.19.4",
     "esbuild-plugin-replace": "^1.4.0",
@@ -39,6 +44,7 @@
     "markdown-it-mark": "^3.0.1",
     "markdown-it-replace-it": "^1.0.0",
     "ora": "^7.0.1",
+    "pascal-case": "^4.0.0",
     "plop": "^4.0.0",
     "prettier": "^3.1.0",
     "recursive-copy": "^2.0.14",
