@@ -210,8 +210,8 @@
         '\n' +
         'body {\n' +
         '  font: 16px sans-serif;\n' +
-        '  background-color: var(--sl-color-neutral-0);\n' +
-        '  color: var(--sl-color-neutral-900);\n' +
+        '  background-color: var(--l-color-neutral-0);\n' +
+        '  color: var(--l-color-neutral-900);\n' +
         '  padding: 1rem;\n' +
         '}';
 
