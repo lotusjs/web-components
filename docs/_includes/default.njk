@@ -2,13 +2,25 @@
 <html
   lang="en"
   data-layout="{{ layout }}"
+  data-lotus-version="{{ meta.version }}"
 >
   <head>
     {# Metadata #}
     <meta charset="utf-8" />
 
+    {# Opt out of Turbo caching #}
+    <meta name="turbo-cache-control">
+
+    {# Stylesheets #}
+    <link rel="stylesheet" href="{{ assetUrl('styles/docs.css') }}" />
+    <link rel="stylesheet" href="{{ assetUrl('styles/code-previews.css') }}" />
+
     {# Lotus #}
+    <link rel="stylesheet" href="/dist/themes/light.css" />
     <script type="module" src="/dist/lotus-autoloader.js"></script>
+
+    {# Turbo + Scroll positioning #}
+    <script src="{{ assetUrl('scripts/code-previews.js') }}" defer></script>
   </head>
   <body>
     <div class="content__body">

@@ -1,8 +1,10 @@
+const path = require('path');
 const { JSDOM } = require('jsdom');
 const { customElementsManifest, getAllComponents } = require('./_utilities/cem.cjs');
 
 const shoelaceFlavoredMarkdown = require('./_utilities/markdown.cjs');
 const prettier = require('./_utilities/prettier.cjs');
+const codePreviews = require('./_utilities/code-previews.cjs');
 
 const assetsDir = 'assets';
 const cdndir = 'cdn';
@@ -31,6 +33,12 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy(assetsDir);
   eleventyConfig.setServerPassthroughCopyBehavior('passthrough');
 
+  // Generates a URL relative to the site's asset directory
+  eleventyConfig.addNunjucksGlobal('assetUrl', (value = '', absolute = false) => {
+    value = path.join(`/${assetsDir}`, value);
+    return absolute ? new URL(value, eleventyConfig.globalData.baseUrl).toString() : value;
+  });
+
   // Custom markdown syntaxes
   eleventyConfig.setLibrary('md', shoelaceFlavoredMarkdown);
 
@@ -47,6 +55,7 @@ module.exports = function (eleventyConfig) {
       url: `https://internal/`
     }).window.document;
 
+    codePreviews(doc);
     // DOM transforms
     content = `<!DOCTYPE html>\n${doc.documentElement.outerHTML}`;
 
