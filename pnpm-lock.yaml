@@ -117,6 +117,9 @@ importers:
       recursive-copy:
         specifier: ^2.0.14
         version: 2.0.14
+      strip-css-comments:
+        specifier: ^5.0.0
+        version: 5.0.0
       tsx:
         specifier: ^4.5.0
         version: 4.5.0
@@ -3962,6 +3965,11 @@ packages:
       has-tostringtag: 1.0.0
     dev: true
 
+  /is-regexp@3.1.0:
+    resolution: {integrity: sha512-rbku49cWloU5bSMI+zaRaXdQHXnthP6DZ/vLnfdSKyL4zUzuWnomtOEiZZOd+ioQ+avFo/qau3KPTc7Fjy1uPA==}
+    engines: {node: '>=12'}
+    dev: true
+
   /is-relative@1.0.0:
     resolution: {integrity: sha512-Kw/ReK0iqwKeu0MITLFuj0jbPAmEiOsIwyIXvvbfa6QfmN9pkD1M+8pdk7Rl/dTKbH34/XBFMbgD4iMJhLQbGA==}
     engines: {node: '>=0.10.0'}
@@ -5846,6 +5854,13 @@ packages:
   /strip-bom-string@1.0.0:
     resolution: {integrity: sha512-uCC2VHvQRYu+lMh4My/sFNmF2klFymLX1wHJeXnbEJERpV/ZsVuonzerjfrGpIGF7LBVa1O7i9kjiWvJiFck8g==}
     engines: {node: '>=0.10.0'}
+    dev: true
+
+  /strip-css-comments@5.0.0:
+    resolution: {integrity: sha512-943vUh0ZxvxO6eK+TzY2F4nVN7a+ZdRK4KIdwHaGMvMrXTrAsJBRudOR3Zi0bLTuVSbF0CQXis4uw04uCabWkg==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+    dependencies:
+      is-regexp: 3.1.0
     dev: true
 
   /supports-color@5.5.0:
