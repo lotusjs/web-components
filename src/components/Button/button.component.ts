@@ -3,7 +3,7 @@ import { property } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
 import { HasSlotController } from '../../internal/slot.js';
 import { ShoelaceElement } from '../../internal/ShoelaceElement.js';
-import styles from './button.styles';
+import styles from './button.styles.js';
 
 import type { CSSResultGroup } from 'lit';
 
@@ -18,6 +18,9 @@ export default class Button extends ShoelaceElement {
   /** The button's size. */
   @property({ reflect: true }) size: 'small' | 'medium' | 'large' = 'medium';
 
+  /** 主题 */
+  @property({ reflect: true }) theme: 'light' | 'solid' | 'borderless' = 'light';
+
   /** Draws an outlined button. */
   @property({ type: Boolean, reflect: true }) outline = false;
 
@@ -25,9 +28,10 @@ export default class Button extends ShoelaceElement {
     return html`
       <button
         class=${classMap({
-          button: true,
+          'l-btn': true,
           'button--default': this.variant === 'default',
           'button--medium': this.size === 'medium',
+          'l-button-${this.theme}': this.theme,
           'button--standard': !this.outline,
           'button--has-label': this.hasSlotController.test('[default]'),
         })}

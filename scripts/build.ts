@@ -163,6 +163,10 @@ function handleCleanup() {
     );
   });
 
+  await nextTask('Generating styles', () => {
+    return execPromise(`lotus-scripts mark-styles`);
+  });
+
   await nextTask('Generating themes', () => {
     return execPromise(`lotus-scripts make-themes --outdir "${outdir}"`);
   });
@@ -227,7 +231,12 @@ function handleCleanup() {
 
       try {
         const isTheme = /^src\/themes/.test(filename);
+        const isLess =/(\.styles\.less)$/.test(filename);
         const isStylesheet = /(\.css|\.styles\.ts)$/.test(filename);
+
+        if (isLess) {
+          await execPromise(`lotus-scripts mark-styles`);
+        }
 
         // Rebuild the source
         const rebuildResults = buildResults.map(result => result.rebuild());
