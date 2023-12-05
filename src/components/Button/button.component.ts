@@ -7,9 +7,10 @@ import styles from './button.styles.js';
 
 import type { CSSResultGroup } from 'lit';
 
+const prefixCls = 'l-btn';
+
 export default class Button extends ShoelaceElement {
   static styles: CSSResultGroup = styles;
-
   private readonly hasSlotController = new HasSlotController(this, '[default]', 'prefix', 'suffix');
 
   /** The button's theme variant. */
@@ -28,12 +29,8 @@ export default class Button extends ShoelaceElement {
     return html`
       <button
         class=${classMap({
-          'l-btn': true,
-          'button--default': this.variant === 'default',
-          'button--medium': this.size === 'medium',
-          'l-button-${this.theme}': this.theme,
-          'button--standard': !this.outline,
-          'button--has-label': this.hasSlotController.test('[default]'),
+          [prefixCls]: true,
+          [`${prefixCls}-${this.theme}`]: this.theme !== 'light',
         })}
       >
         <slot part="label" class="button__label"></slot>
