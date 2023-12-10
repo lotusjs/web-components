@@ -1,7 +1,7 @@
 import { html } from 'lit';
 import { property } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
-import { HasSlotController } from '../../internal/slot.js';
+// import { HasSlotController } from '../../internal/slot.js';
 import { ShoelaceElement } from '../../internal/ShoelaceElement.js';
 import styles from './button.styles.js';
 
@@ -11,16 +11,30 @@ const prefixCls = 'l-btn';
 
 export default class Button extends ShoelaceElement {
   static styles: CSSResultGroup = styles;
-  private readonly hasSlotController = new HasSlotController(this, '[default]', 'prefix', 'suffix');
+  // private readonly hasSlotController = new HasSlotController(this, '[default]', 'prefix', 'suffix');
 
   /** The button's theme variant. */
   @property({ reflect: true }) variant: 'default' | 'primary' | 'success' = 'default';
 
-  /** The button's size. */
+  /** 按钮大小 */
   @property({ reflect: true }) size: 'small' | 'medium' | 'large' = 'medium';
 
-  /** 主题 */
+  /**
+   * 按钮主题
+   * solid: 有背景色
+   * light: 浅背景色
+   * borderless: 无背景色
+   */
   @property({ reflect: true }) theme: 'light' | 'solid' | 'borderless' = 'light';
+
+  /** 块级按钮 */
+  @property({ type: Boolean, reflect: true }) block = false;
+
+  /** 禁用状态 */
+  @property({ type: Boolean, reflect: true }) disabled = false;
+
+  /** 加载状态 */
+  @property({ type: Boolean, reflect: true }) loading = false;
 
   /** Draws an outlined button. */
   @property({ type: Boolean, reflect: true }) outline = false;
