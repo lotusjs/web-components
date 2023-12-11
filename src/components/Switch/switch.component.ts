@@ -14,28 +14,36 @@ export default class Switch extends ShoelaceElement {
   static styles: CSSResultGroup = styles;
   // private readonly hasSlotController = new HasSlotController(this, '[default]', 'prefix', 'suffix');
 
-  /** 展示为小红点 */
-  @property({ type: Boolean, reflect: true }) dot = false;
+  /** 开关大小 */
+  @property({ reflect: true }) size: 'small' | 'medium' | 'large' = 'medium';
 
-  /** 自定义小圆点的颜色 */
-  @property({ type: String, reflect: true }) color = '';
+  /** 开关样式类型 */
+  @property({ reflect: true }) type: 'circle' | 'round' | 'line' = 'circle';
 
-  /** 当数值为 0 时，是否展示 Badge */
-  @property({ type: Boolean, reflect: true }) showZero = false;
+  /** 指示当前是否选中 */
+  @property({ type: Boolean, reflect: true }) checked = false;
 
-  /** 设置状态点的位置偏移 */
-  @property({ type: Array, reflect: true }) offset = [];
+  /** 是否处于加载中状态 */
+  @property({ type: Boolean, reflect: true }) loading = false;
+
+  /** 是否禁用 */
+  @property({ type: Boolean, reflect: true }) disabled = false;
 
   render() {
     return html`
-      <span
+      <label
         part="base"
         class=${classMap({
           [prefixCls]: true,
+          [`${prefixCls}-checked`]: this.checked,
+          [`${prefixCls}-loading`]: this.loading,
+          [`${prefixCls}-size-${this.size}`]: this.size,
         })}
       >
-        <slot></slot>
-      </span>
+        <div class="${prefixCls}-dot">
+        123
+        </div>
+      </label>
     `;
   }
 }

@@ -1,9 +1,9 @@
-import LSwitch from './switch.components.js';
+import LSwitch from './switch.component.js';
 
-LSwitch.define('l-badge');
+LSwitch.define('l-switch');
 
 export default LSwitch;
-export * from './switch.components.js';
+export * from './switch.component.js';
 
 declare global {
   interface HTMLElementTagNameMap {
