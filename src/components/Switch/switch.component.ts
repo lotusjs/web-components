@@ -29,21 +29,25 @@ export default class Switch extends ShoelaceElement {
   /** 是否禁用 */
   @property({ type: Boolean, reflect: true }) disabled = false;
 
+  private handleClick() {
+    this.checked = !this.checked;
+  }
+
   render() {
     return html`
-      <label
+      <button
         part="base"
         class=${classMap({
           [prefixCls]: true,
+          [`${prefixCls}-type-${this.type}`]: this.type,
           [`${prefixCls}-checked`]: this.checked,
           [`${prefixCls}-loading`]: this.loading,
           [`${prefixCls}-size-${this.size}`]: this.size,
         })}
+        @click=${this.handleClick}
       >
-        <div class="${prefixCls}-dot">
-        123
-        </div>
-      </label>
+        <div class="${prefixCls}-dot"></div>
+      </button>
     `;
   }
 }

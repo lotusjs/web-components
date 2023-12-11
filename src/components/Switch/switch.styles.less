@@ -5,9 +5,90 @@
   cursor: pointer;
   display: inline-block;
   box-sizing: border-box;
+  border: 0;
   outline: none;
   height: 24px;
+  min-width: 40px;
   line-height: 24px;
+  overflow: hidden;
+  vertical-align: middle;
   border-radius: 12px;
   background-color: rgba(0, 0, 0, 0.25);
+  transition: background-color .2s cubic-bezier(.34,.69,.1,1);
+
+  &-checked {
+    background-color: #1677ff;
+  }
+
+  &-dot {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #fff;
+    font-size: 12px;
+    transition: all .2s cubic-bezier(.34,.69,.1,1)
+  }
+
+  &-checked &-dot {
+    left: calc(100% - 20px);
+  }
+}
+
+// Round
+.@{switch-prefix-cls} {
+  &-type-round {
+    border-radius: 2px;
+    min-width: 40px;
+  }
+
+  &-type-round &-dot {
+    border-radius: 2px;
+  }
+}
+
+// Line
+.@{switch-prefix-cls} {
+  &-type-line {
+    min-width: 36px;
+    background-color: transparent;
+    overflow: unset;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 100%;
+      border-radius: 3px;
+      height: 6px;
+      background-color: rgba(0, 0, 0, 0.25);
+      transition: background-color .2s cubic-bezier(.34,.69,.1,1);
+    }
+  }
+
+  &-type-line &-dot {
+    top: 2px;
+    left: 0;
+    border-radius: 10px;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  }
+
+  &-type-line&-checked {
+    background-color: transparent;
+
+    &::after {
+      background-color: #1677ff;
+    }
+  }
+
+  &-type-line&-checked &-dot {
+    left: calc(100% - 20px);
+  }
 }
