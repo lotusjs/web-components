@@ -37,9 +37,11 @@ export default class Switch extends ShoelaceElement {
     return html`
       <button
         part="base"
+        role="switch"
         class=${classMap({
           [prefixCls]: true,
           [`${prefixCls}-type-${this.type}`]: this.type,
+          [`${prefixCls}-size-${this.size}`]: this.type,
           [`${prefixCls}-checked`]: this.checked,
           [`${prefixCls}-loading`]: this.loading,
           [`${prefixCls}-size-${this.size}`]: this.size,

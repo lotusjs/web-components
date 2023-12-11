@@ -1,3 +1,5 @@
+@import './style/token.less';
+
 @switch-prefix-cls: ~'l-switch';
 
 .@{switch-prefix-cls} {
@@ -7,9 +9,9 @@
   box-sizing: border-box;
   border: 0;
   outline: none;
-  height: 24px;
+  height: @switch-size;
   min-width: 40px;
-  line-height: 24px;
+  line-height: @switch-size;
   overflow: hidden;
   vertical-align: middle;
   border-radius: 12px;

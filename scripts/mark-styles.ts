@@ -1,18 +1,14 @@
 import 'zx/globals';
-import less from 'less';autoprefixer
 import autoprefixer from 'autoprefixer';
 import postcss from 'postcss';
 import prettier from 'prettier';
-import { writeFileSync, readFileSync } from 'fs';
+import { writeFileSync } from 'fs';
 import { globbySync } from 'globby';
 
-const files = globbySync('./src/components/**/[!_]*.less');
+const files = globbySync('./src/components/**/[!_]*.styles.less');
 
 files.forEach(async file => {
-  const source = readFileSync(file, 'utf8');
-
-  const { css: lessToCss } = await less.render(source, {});
-
+  const lessToCss = await $`lessc ${file}`;
   const { css } = await postcss([autoprefixer, ]).process(lessToCss, {
     from: file
   })
