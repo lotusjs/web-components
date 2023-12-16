@@ -40,6 +40,12 @@
   &-checked &-dot {
     left: calc(100% - 20px);
   }
+
+  // Disabled
+  &[disabled] {
+    cursor: not-allowed;
+    opacity: @switch-opacity-loading;
+  }
 }
 
 // Round

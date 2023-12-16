@@ -4,10 +4,18 @@ meta:
 layout: component
 ---
 
+## 代码演示
+
+### 基本
+
 ```html:preview
-<l-switch></l-switch>
+<l-switch checked></l-switch>
+```
 
-<l-switch type="round"></l-switch>
+### 不可用
 
-<l-switch type="line"></l-switch>
+```html:preview
+<l-switch disabled></l-switch>
+
+<l-switch checked disabled></l-switch>
 ```

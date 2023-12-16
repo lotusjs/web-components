@@ -1,7 +1,6 @@
 import { html } from 'lit';
 import { property } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
-// import { HasSlotController } from '../../internal/slot.js';
 import { ShoelaceElement } from '../../internal/ShoelaceElement.js';
 import styles from './switch.styles.js';
 
@@ -12,7 +11,6 @@ const prefixCls = 'l-switch';
 /** 开关组件 */
 export default class Switch extends ShoelaceElement {
   static styles: CSSResultGroup = styles;
-  // private readonly hasSlotController = new HasSlotController(this, '[default]', 'prefix', 'suffix');
 
   /** 开关大小 */
   @property({ reflect: true }) size: 'small' | 'medium' | 'large' = 'medium';
@@ -40,12 +38,14 @@ export default class Switch extends ShoelaceElement {
         role="switch"
         class=${classMap({
           [prefixCls]: true,
+          [`${prefixCls}-checked`]: this.checked,
+          [`${prefixCls}-disabled`]: this.disabled,
           [`${prefixCls}-type-${this.type}`]: this.type,
           [`${prefixCls}-size-${this.size}`]: this.type,
-          [`${prefixCls}-checked`]: this.checked,
           [`${prefixCls}-loading`]: this.loading,
           [`${prefixCls}-size-${this.size}`]: this.size,
         })}
+        .disabled=${this.disabled}
         @click=${this.handleClick}
       >
         <div class="${prefixCls}-dot"></div>
