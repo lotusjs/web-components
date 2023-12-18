@@ -2,6 +2,10 @@
 
 @switch-prefix-cls: ~'l-switch';
 
+@switch-size-small-gap: ((@switch-size-small - @switch-size-dot-small) / 2);
+@switch-size-line-gap: ((@switch-size - @switch-line-size-dot) / 2);
+@switch-size-small-line-gap: ((@switch-size-small - @switch-line-size-dot-small) / 2);
+
 .@{switch-prefix-cls} {
   position: relative;
   cursor: pointer;
@@ -46,6 +50,35 @@
     cursor: not-allowed;
     opacity: @switch-opacity-loading;
   }
+
+  &-size-small {
+    height: @switch-size-small;
+    line-height: @switch-size-small;
+    min-width: @switch-circle-small-width;
+  }
+
+  &-size-small&-checked {
+    padding-left: -@switch-size-small-gap;
+  }
+
+  &-size-small &-dot {
+    top: @switch-size-small-gap;
+    left: @switch-size-small-gap;
+    width: @switch-size-dot-small;
+    height: @switch-size-dot-small;
+    border-radius: (@switch-size-small / 2);
+
+    &-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.66667);
+    }
+  }
+
+  &-size-small&-checked &-dot {
+    left: calc(100% - @switch-size-dot-small - @switch-size-small-gap);
+  }
 }
 
 // Round
@@ -57,6 +90,17 @@
 
   &-type-round &-dot {
     border-radius: 2px;
+  }
+
+  &-type-round&-size-small {
+    border-radius: 2px;
+    height: @switch-size-small;
+    line-height: @switch-size-small;
+    min-width: @switch-round-small-width;
+  }
+
+  &-type-round&-size-small &-dot {
+    border-radius: 1px;
   }
 }
 
@@ -98,5 +142,30 @@
 
   &-type-line&-checked &-dot {
     left: calc(100% - 20px);
+  }
+
+  &-type-line&-size-small {
+    height: @switch-size-small;
+    line-height: @switch-size-small;
+    min-width: @switch-line-small-width;
+  }
+
+  &-type-line&-size-small&-checked {
+    padding-left: -@switch-size-small-line-gap;
+  }
+
+  &-type-line&-size-small &-dot {
+    top: @switch-size-small-line-gap;
+    width: @switch-line-size-dot-small;
+    height: @switch-line-size-dot-small;
+    border-radius: (@switch-size-small / 2);
+
+    &-icon {
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+
+  &-type-line&-size-small&-checked &-dot {
+    left: calc(100% - @switch-line-size-dot-small);
   }
 }

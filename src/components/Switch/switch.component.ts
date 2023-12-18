@@ -41,9 +41,8 @@ export default class Switch extends ShoelaceElement {
           [`${prefixCls}-checked`]: this.checked,
           [`${prefixCls}-disabled`]: this.disabled,
           [`${prefixCls}-type-${this.type}`]: this.type,
-          [`${prefixCls}-size-${this.size}`]: this.type,
-          [`${prefixCls}-loading`]: this.loading,
           [`${prefixCls}-size-${this.size}`]: this.size,
+          [`${prefixCls}-loading`]: this.loading,
         })}
         .disabled=${this.disabled}
         @click=${this.handleClick}
