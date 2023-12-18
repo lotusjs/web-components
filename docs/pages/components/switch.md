@@ -37,9 +37,15 @@ layout: component
 <l-switch></l-switch>
 <l-switch size="small"></l-switch>
 
+<br />
+<br />
+
 <l-switch type="round" size="large"></l-switch>
 <l-switch type="round"></l-switch>
 <l-switch type="round" size="small"></l-switch>
+
+<br />
+<br />
 
 <l-switch type="line" size="large"></l-switch>
 <l-switch type="line"></l-switch>
