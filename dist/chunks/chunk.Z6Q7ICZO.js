@@ -1,6 +1,6 @@
 import {
   Badge
-} from "./chunk.2MJ3QLXR.js";
+} from "./chunk.LT3IIMI3.js";
 
 // src/components/Badge/badge.ts
 Badge.define("l-badge");

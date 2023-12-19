@@ -1,11 +1,11 @@
 import {
+  badge_styles_default
+} from "./chunk.5DSAEUXV.js";
+import {
   ShoelaceElement,
   e,
   n
 } from "./chunk.FDMCBEAB.js";
-import {
-  badge_styles_default
-} from "./chunk.5DSAEUXV.js";
 import {
   x
 } from "./chunk.CI4I3F3P.js";
