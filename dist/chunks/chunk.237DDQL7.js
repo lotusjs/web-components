@@ -2,7 +2,7 @@ import {
   i
 } from "./chunk.CI4I3F3P.js";
 
-// src/components/Switch/switch.styles.ts
+// src/components/switch/switch.styles.ts
 var switch_styles_default = i`
   .l-switch {
     position: relative;

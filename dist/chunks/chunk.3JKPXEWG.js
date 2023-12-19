@@ -1,6 +1,6 @@
 import {
   switch_styles_default
-} from "./chunk.SLMYRP76.js";
+} from "./chunk.237DDQL7.js";
 import {
   ShoelaceElement,
   e,
@@ -13,7 +13,7 @@ import {
   __decorateClass
 } from "./chunk.PM7NIY3M.js";
 
-// src/components/Switch/switch.component.ts
+// src/components/switch/switch.component.ts
 var prefixCls = "l-switch";
 var Switch = class extends ShoelaceElement {
   constructor() {

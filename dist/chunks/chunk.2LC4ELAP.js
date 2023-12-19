@@ -1,8 +1,8 @@
 import {
   Badge
-} from "./chunk.LT3IIMI3.js";
+} from "./chunk.CMOAVOXX.js";
 
-// src/components/Badge/badge.ts
+// src/components/badge/badge.ts
 Badge.define("l-badge");
 var badge_default = Badge;
 

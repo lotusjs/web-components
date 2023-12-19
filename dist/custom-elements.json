@@ -4,7 +4,7 @@
   "modules": [
     {
       "kind": "javascript-module",
-      "path": "components/Badge/badge.js",
+      "path": "components/badge/badge.js",
       "declarations": [
         {
           "kind": "class",
@@ -110,14 +110,14 @@
           "name": "default",
           "declaration": {
             "name": "Badge",
-            "module": "components/Badge/badge.js"
+            "module": "components/badge/badge.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "components/Button/button.js",
+      "path": "components/button/button.js",
       "declarations": [
         {
           "kind": "class",
@@ -282,14 +282,14 @@
           "name": "default",
           "declaration": {
             "name": "Button",
-            "module": "components/Button/button.js"
+            "module": "components/button/button.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "components/Switch/switch.js",
+      "path": "components/switch/switch.js",
       "declarations": [
         {
           "kind": "class",
@@ -420,7 +420,7 @@
           "name": "default",
           "declaration": {
             "name": "Switch",
-            "module": "components/Switch/switch.js"
+            "module": "components/switch/switch.js"
           }
         }
       ]

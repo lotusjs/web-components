@@ -5,7 +5,7 @@ import {
 } from "./chunk.FDMCBEAB.js";
 import {
   button_styles_default
-} from "./chunk.25NS7DYT.js";
+} from "./chunk.LDXUKOBP.js";
 import {
   x
 } from "./chunk.CI4I3F3P.js";
@@ -13,7 +13,7 @@ import {
   __decorateClass
 } from "./chunk.PM7NIY3M.js";
 
-// src/components/Button/button.component.ts
+// src/components/button/button.component.ts
 var prefixCls = "l-btn";
 var Button = class extends ShoelaceElement {
   constructor() {

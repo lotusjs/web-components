@@ -1,8 +1,8 @@
 import {
   Switch
-} from "./chunk.YRVMPTJ4.js";
+} from "./chunk.3JKPXEWG.js";
 
-// src/components/Switch/switch.ts
+// src/components/switch/switch.ts
 Switch.define("l-switch");
 var switch_default = Switch;
 

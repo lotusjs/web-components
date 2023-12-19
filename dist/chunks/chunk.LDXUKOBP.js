@@ -2,7 +2,7 @@ import {
   i
 } from "./chunk.CI4I3F3P.js";
 
-// src/components/Button/button.styles.ts
+// src/components/button/button.styles.ts
 var button_styles_default = i`
   .l-btn {
     position: relative;

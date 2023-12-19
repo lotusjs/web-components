@@ -1,8 +1,8 @@
 import {
   Button
-} from "./chunk.PV6KZMWC.js";
+} from "./chunk.444ZVZ5V.js";
 
-// src/components/Button/button.ts
+// src/components/button/button.ts
 Button.define("l-button");
 var button_default = Button;
 

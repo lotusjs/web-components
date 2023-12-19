@@ -1,6 +1,6 @@
 import {
   badge_styles_default
-} from "./chunk.5DSAEUXV.js";
+} from "./chunk.CBWPTQU3.js";
 import {
   ShoelaceElement,
   e,
@@ -13,7 +13,7 @@ import {
   __decorateClass
 } from "./chunk.PM7NIY3M.js";
 
-// src/components/Badge/badge.component.ts
+// src/components/badge/badge.component.ts
 var prefixCls = "l-badge";
 var Badge = class extends ShoelaceElement {
   constructor() {
