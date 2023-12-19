@@ -185,6 +185,14 @@ function handleCleanup() {
     buildResults = await buildTheSource();
   });
 
+  if (!serve) {
+    await nextTask(`Copying the build to "${sitedir}"`, async () => {
+      await deleteAsync(sitedir);
+
+      await copy(cdndir, path.join(sitedir, 'dist'));
+    });
+  }
+
   if (serve) {
     let result: ChildResult;
 
