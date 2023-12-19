@@ -1,0 +1,436 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "components/Badge/badge.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "徽标组件",
+          "name": "Badge",
+          "members": [
+            {
+              "kind": "field",
+              "name": "dot",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "展示为小红点",
+              "attribute": "dot",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "color",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "自定义小圆点的颜色",
+              "attribute": "color",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "showZero",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "当数值为 0 时，是否展示 Badge",
+              "attribute": "showZero",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "offset",
+              "type": {
+                "text": "array"
+              },
+              "default": "[]",
+              "description": "设置状态点的位置偏移",
+              "attribute": "offset",
+              "reflects": true
+            }
+          ],
+          "attributes": [
+            {
+              "name": "dot",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "展示为小红点",
+              "fieldName": "dot"
+            },
+            {
+              "name": "color",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "自定义小圆点的颜色",
+              "fieldName": "color"
+            },
+            {
+              "name": "showZero",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "当数值为 0 时，是否展示 Badge",
+              "fieldName": "showZero"
+            },
+            {
+              "name": "offset",
+              "type": {
+                "text": "array"
+              },
+              "default": "[]",
+              "description": "设置状态点的位置偏移",
+              "fieldName": "offset"
+            }
+          ],
+          "superclass": {
+            "name": "ShoelaceElement",
+            "module": "/src/internal/ShoelaceElement.js"
+          },
+          "tagNameWithoutPrefix": "badge",
+          "tagName": "l-badge",
+          "customElement": true,
+          "jsDoc": "/** 徽标组件 */"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "Badge",
+            "module": "components/Badge/badge.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "components/Button/button.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "Button",
+          "members": [
+            {
+              "kind": "field",
+              "name": "variant",
+              "type": {
+                "text": "'default' | 'primary' | 'success'"
+              },
+              "default": "'default'",
+              "description": "The button's theme variant.",
+              "attribute": "variant",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "size",
+              "type": {
+                "text": "'small' | 'medium' | 'large'"
+              },
+              "default": "'medium'",
+              "description": "按钮大小",
+              "attribute": "size",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "theme",
+              "type": {
+                "text": "'light' | 'solid' | 'borderless'"
+              },
+              "default": "'light'",
+              "description": "按钮主题\nsolid: 有背景色\nlight: 浅背景色\nborderless: 无背景色",
+              "attribute": "theme",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "block",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "块级按钮",
+              "attribute": "block",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "禁用状态",
+              "attribute": "disabled",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "loading",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "加载状态",
+              "attribute": "loading",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "outline",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Draws an outlined button.",
+              "attribute": "outline",
+              "reflects": true
+            }
+          ],
+          "attributes": [
+            {
+              "name": "variant",
+              "type": {
+                "text": "'default' | 'primary' | 'success'"
+              },
+              "default": "'default'",
+              "description": "The button's theme variant.",
+              "fieldName": "variant"
+            },
+            {
+              "name": "size",
+              "type": {
+                "text": "'small' | 'medium' | 'large'"
+              },
+              "default": "'medium'",
+              "description": "按钮大小",
+              "fieldName": "size"
+            },
+            {
+              "name": "theme",
+              "type": {
+                "text": "'light' | 'solid' | 'borderless'"
+              },
+              "default": "'light'",
+              "description": "按钮主题\nsolid: 有背景色\nlight: 浅背景色\nborderless: 无背景色",
+              "fieldName": "theme"
+            },
+            {
+              "name": "block",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "块级按钮",
+              "fieldName": "block"
+            },
+            {
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "禁用状态",
+              "fieldName": "disabled"
+            },
+            {
+              "name": "loading",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "加载状态",
+              "fieldName": "loading"
+            },
+            {
+              "name": "outline",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Draws an outlined button.",
+              "fieldName": "outline"
+            }
+          ],
+          "superclass": {
+            "name": "ShoelaceElement",
+            "module": "/src/internal/ShoelaceElement.js"
+          },
+          "tagNameWithoutPrefix": "button",
+          "tagName": "l-button",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "Button",
+            "module": "components/Button/button.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "components/Switch/switch.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "开关组件",
+          "name": "Switch",
+          "members": [
+            {
+              "kind": "field",
+              "name": "size",
+              "type": {
+                "text": "'small' | 'medium' | 'large'"
+              },
+              "default": "'medium'",
+              "description": "开关大小",
+              "attribute": "size",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "type",
+              "type": {
+                "text": "'circle' | 'round' | 'line'"
+              },
+              "default": "'circle'",
+              "description": "开关样式类型",
+              "attribute": "type",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "checked",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "指示当前是否选中",
+              "attribute": "checked",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "loading",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "是否处于加载中状态",
+              "attribute": "loading",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "是否禁用",
+              "attribute": "disabled",
+              "reflects": true
+            },
+            {
+              "kind": "method",
+              "name": "handleClick",
+              "privacy": "private"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "size",
+              "type": {
+                "text": "'small' | 'medium' | 'large'"
+              },
+              "default": "'medium'",
+              "description": "开关大小",
+              "fieldName": "size"
+            },
+            {
+              "name": "type",
+              "type": {
+                "text": "'circle' | 'round' | 'line'"
+              },
+              "default": "'circle'",
+              "description": "开关样式类型",
+              "fieldName": "type"
+            },
+            {
+              "name": "checked",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "指示当前是否选中",
+              "fieldName": "checked"
+            },
+            {
+              "name": "loading",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "是否处于加载中状态",
+              "fieldName": "loading"
+            },
+            {
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "是否禁用",
+              "fieldName": "disabled"
+            }
+          ],
+          "superclass": {
+            "name": "ShoelaceElement",
+            "module": "/src/internal/ShoelaceElement.js"
+          },
+          "tagNameWithoutPrefix": "switch",
+          "tagName": "l-switch",
+          "customElement": true,
+          "jsDoc": "/** 开关组件 */"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "Switch",
+            "module": "components/Switch/switch.js"
+          }
+        }
+      ]
+    }
+  ],
+  "package": {
+    "name": "@lotus-design/web",
+    "description": "基于 Web 标准构建的 UI 组件库（适用于所有框架）",
+    "version": "1.0.0",
+    "author": "",
+    "license": "ISC"
+  }
+}

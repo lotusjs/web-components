@@ -1,0 +1,114 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/vscode-html-languageservice/main/docs/customData.schema.json",
+  "version": 1.1,
+  "tags": [
+    {
+      "name": "l-badge",
+      "description": "徽标组件\n---\n",
+      "attributes": [
+        { "name": "dot", "description": "展示为小红点", "values": [] },
+        { "name": "color", "description": "自定义小圆点的颜色", "values": [] },
+        {
+          "name": "showZero",
+          "description": "当数值为 0 时，是否展示 Badge",
+          "values": []
+        },
+        {
+          "name": "offset",
+          "description": "设置状态点的位置偏移",
+          "values": [{ "name": "array" }]
+        }
+      ],
+      "references": [
+        {
+          "name": "Documentation",
+          "url": "https://shoelace.style/components/l-badge"
+        }
+      ]
+    },
+    {
+      "name": "l-button",
+      "description": "\n---\n",
+      "attributes": [
+        {
+          "name": "variant",
+          "description": "The button's theme variant.",
+          "values": [
+            { "name": "default" },
+            { "name": "primary" },
+            { "name": "success" }
+          ]
+        },
+        {
+          "name": "size",
+          "description": "按钮大小",
+          "values": [
+            { "name": "small" },
+            { "name": "medium" },
+            { "name": "large" }
+          ]
+        },
+        {
+          "name": "theme",
+          "description": "按钮主题\nsolid: 有背景色\nlight: 浅背景色\nborderless: 无背景色",
+          "values": [
+            { "name": "light" },
+            { "name": "solid" },
+            { "name": "borderless" }
+          ]
+        },
+        { "name": "block", "description": "块级按钮", "values": [] },
+        { "name": "disabled", "description": "禁用状态", "values": [] },
+        { "name": "loading", "description": "加载状态", "values": [] },
+        {
+          "name": "outline",
+          "description": "Draws an outlined button.",
+          "values": []
+        }
+      ],
+      "references": [
+        {
+          "name": "Documentation",
+          "url": "https://shoelace.style/components/l-button"
+        }
+      ]
+    },
+    {
+      "name": "l-switch",
+      "description": "开关组件\n---\n",
+      "attributes": [
+        {
+          "name": "size",
+          "description": "开关大小",
+          "values": [
+            { "name": "small" },
+            { "name": "medium" },
+            { "name": "large" }
+          ]
+        },
+        {
+          "name": "type",
+          "description": "开关样式类型",
+          "values": [
+            { "name": "circle" },
+            { "name": "round" },
+            { "name": "line" }
+          ]
+        },
+        { "name": "checked", "description": "指示当前是否选中", "values": [] },
+        {
+          "name": "loading",
+          "description": "是否处于加载中状态",
+          "values": []
+        },
+        { "name": "disabled", "description": "是否禁用", "values": [] }
+      ],
+      "references": [
+        {
+          "name": "Documentation",
+          "url": "https://shoelace.style/components/l-switch"
+        }
+      ]
+    }
+  ]
+}

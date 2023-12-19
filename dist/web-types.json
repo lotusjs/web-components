@@ -1,0 +1,226 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JetBrains/web-types/master/schema/web-types.json",
+  "name": "@lotus-design/web",
+  "version": "1.0.0",
+  "description-markup": "markdown",
+  "contributions": {
+    "html": {
+      "elements": [
+        {
+          "name": "l-badge",
+          "description": "徽标组件\n---\n",
+          "doc-url": "",
+          "attributes": [
+            {
+              "name": "dot",
+              "description": "展示为小红点",
+              "value": { "type": "boolean", "default": "false" }
+            },
+            {
+              "name": "color",
+              "description": "自定义小圆点的颜色",
+              "value": { "type": "string", "default": "''" }
+            },
+            {
+              "name": "showZero",
+              "description": "当数值为 0 时，是否展示 Badge",
+              "value": { "type": "boolean", "default": "false" }
+            },
+            {
+              "name": "offset",
+              "description": "设置状态点的位置偏移",
+              "value": { "type": "array", "default": "[]" }
+            }
+          ],
+          "events": [],
+          "js": {
+            "properties": [
+              {
+                "name": "dot",
+                "description": "展示为小红点",
+                "value": { "type": "boolean" }
+              },
+              {
+                "name": "color",
+                "description": "自定义小圆点的颜色",
+                "value": { "type": "string" }
+              },
+              {
+                "name": "showZero",
+                "description": "当数值为 0 时，是否展示 Badge",
+                "value": { "type": "boolean" }
+              },
+              {
+                "name": "offset",
+                "description": "设置状态点的位置偏移",
+                "value": { "type": "array" }
+              }
+            ],
+            "events": []
+          }
+        },
+        {
+          "name": "l-button",
+          "description": "\n---\n",
+          "doc-url": "",
+          "attributes": [
+            {
+              "name": "variant",
+              "description": "The button's theme variant.",
+              "value": {
+                "type": "'default' | 'primary' | 'success'",
+                "default": "'default'"
+              }
+            },
+            {
+              "name": "size",
+              "description": "按钮大小",
+              "value": {
+                "type": "'small' | 'medium' | 'large'",
+                "default": "'medium'"
+              }
+            },
+            {
+              "name": "theme",
+              "description": "按钮主题\nsolid: 有背景色\nlight: 浅背景色\nborderless: 无背景色",
+              "value": {
+                "type": "'light' | 'solid' | 'borderless'",
+                "default": "'light'"
+              }
+            },
+            {
+              "name": "block",
+              "description": "块级按钮",
+              "value": { "type": "boolean", "default": "false" }
+            },
+            {
+              "name": "disabled",
+              "description": "禁用状态",
+              "value": { "type": "boolean", "default": "false" }
+            },
+            {
+              "name": "loading",
+              "description": "加载状态",
+              "value": { "type": "boolean", "default": "false" }
+            },
+            {
+              "name": "outline",
+              "description": "Draws an outlined button.",
+              "value": { "type": "boolean", "default": "false" }
+            }
+          ],
+          "events": [],
+          "js": {
+            "properties": [
+              {
+                "name": "variant",
+                "description": "The button's theme variant.",
+                "value": { "type": "'default' | 'primary' | 'success'" }
+              },
+              {
+                "name": "size",
+                "description": "按钮大小",
+                "value": { "type": "'small' | 'medium' | 'large'" }
+              },
+              {
+                "name": "theme",
+                "description": "按钮主题\nsolid: 有背景色\nlight: 浅背景色\nborderless: 无背景色",
+                "value": { "type": "'light' | 'solid' | 'borderless'" }
+              },
+              {
+                "name": "block",
+                "description": "块级按钮",
+                "value": { "type": "boolean" }
+              },
+              {
+                "name": "disabled",
+                "description": "禁用状态",
+                "value": { "type": "boolean" }
+              },
+              {
+                "name": "loading",
+                "description": "加载状态",
+                "value": { "type": "boolean" }
+              },
+              {
+                "name": "outline",
+                "description": "Draws an outlined button.",
+                "value": { "type": "boolean" }
+              }
+            ],
+            "events": []
+          }
+        },
+        {
+          "name": "l-switch",
+          "description": "开关组件\n---\n",
+          "doc-url": "",
+          "attributes": [
+            {
+              "name": "size",
+              "description": "开关大小",
+              "value": {
+                "type": "'small' | 'medium' | 'large'",
+                "default": "'medium'"
+              }
+            },
+            {
+              "name": "type",
+              "description": "开关样式类型",
+              "value": {
+                "type": "'circle' | 'round' | 'line'",
+                "default": "'circle'"
+              }
+            },
+            {
+              "name": "checked",
+              "description": "指示当前是否选中",
+              "value": { "type": "boolean", "default": "false" }
+            },
+            {
+              "name": "loading",
+              "description": "是否处于加载中状态",
+              "value": { "type": "boolean", "default": "false" }
+            },
+            {
+              "name": "disabled",
+              "description": "是否禁用",
+              "value": { "type": "boolean", "default": "false" }
+            }
+          ],
+          "events": [],
+          "js": {
+            "properties": [
+              {
+                "name": "size",
+                "description": "开关大小",
+                "value": { "type": "'small' | 'medium' | 'large'" }
+              },
+              {
+                "name": "type",
+                "description": "开关样式类型",
+                "value": { "type": "'circle' | 'round' | 'line'" }
+              },
+              {
+                "name": "checked",
+                "description": "指示当前是否选中",
+                "value": { "type": "boolean" }
+              },
+              {
+                "name": "loading",
+                "description": "是否处于加载中状态",
+                "value": { "type": "boolean" }
+              },
+              {
+                "name": "disabled",
+                "description": "是否禁用",
+                "value": { "type": "boolean" }
+              }
+            ],
+            "events": []
+          }
+        }
+      ]
+    }
+  }
+}
