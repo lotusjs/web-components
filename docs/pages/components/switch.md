@@ -34,20 +34,20 @@ layout: component
 
 ```html:preview
 <l-switch size="large"></l-switch>
+<l-switch size="large" type="round"></l-switch>
+<l-switch size="large" type="line"></l-switch>
+
+<br />
+<br />
+
 <l-switch></l-switch>
-<l-switch size="small"></l-switch>
-
-<br />
-<br />
-
-<l-switch type="round" size="large"></l-switch>
 <l-switch type="round"></l-switch>
-<l-switch type="round" size="small"></l-switch>
-
-<br />
-<br />
-
-<l-switch type="line" size="large"></l-switch>
 <l-switch type="line"></l-switch>
-<l-switch type="line" size="small"></l-switch>
+
+<br />
+<br />
+
+<l-switch size="small"></l-switch>
+<l-switch size="small" type="round"></l-switch>
+<l-switch size="small" type="line"></l-switch>
 ```
