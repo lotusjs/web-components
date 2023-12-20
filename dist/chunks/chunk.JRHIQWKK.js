@@ -1,6 +1,6 @@
 import {
   Button
-} from "./chunk.444ZVZ5V.js";
+} from "./chunk.NSHSJFJ6.js";
 
 // src/components/button/button.ts
 Button.define("l-button");

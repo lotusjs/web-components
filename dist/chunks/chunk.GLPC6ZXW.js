@@ -1,11 +1,11 @@
 import {
-  switch_styles_default
-} from "./chunk.237DDQL7.js";
-import {
   ShoelaceElement,
   e,
   n
 } from "./chunk.FDMCBEAB.js";
+import {
+  switch_styles_default
+} from "./chunk.237DDQL7.js";
 import {
   x
 } from "./chunk.CI4I3F3P.js";
