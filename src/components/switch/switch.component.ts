@@ -1,6 +1,7 @@
 import { html } from 'lit';
 import { property } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
+import { defaultValue } from '../../internal/default-value.js';
 import { ShoelaceElement } from '../../internal/ShoelaceElement.js';
 import styles from './switch.styles.js';
 
@@ -27,6 +28,8 @@ export default class Switch extends ShoelaceElement {
   /** 是否禁用 */
   @property({ type: Boolean, reflect: true }) disabled = false;
 
+  @defaultValue('checked') defaultChecked = false;
+
   private handleClick() {
     this.checked = !this.checked;
   }
@@ -42,12 +45,14 @@ export default class Switch extends ShoelaceElement {
           [`${prefixCls}-disabled`]: this.disabled,
           [`${prefixCls}-type-${this.type}`]: this.type,
           [`${prefixCls}-size-${this.size}`]: this.size,
-          [`${prefixCls}-loading`]: this.loading,
+          [`${prefixCls}-loading`]: this.loading
         })}
         .disabled=${this.disabled}
         @click=${this.handleClick}
       >
         <div class="${prefixCls}-dot"></div>
+        ${this.type !== 'line' ? html` <div class="${prefixCls}-text-holder"></div> ` : ''}
+        ${this.type !== 'line' ? html` <div class="${prefixCls}-text"></div> ` : ''}
       </button>
     `;
   }
