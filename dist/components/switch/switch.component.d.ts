@@ -13,6 +13,7 @@ export default class Switch extends ShoelaceElement {
     loading: boolean;
     /** 是否禁用 */
     disabled: boolean;
+    defaultChecked: boolean;
     private handleClick;
     render(): import("lit").TemplateResult<1>;
 }

@@ -1,6 +1,6 @@
 import {
   Switch
-} from "./chunk.GLPC6ZXW.js";
+} from "./chunk.VUZH54NV.js";
 
 // src/components/switch/switch.ts
 Switch.define("l-switch");

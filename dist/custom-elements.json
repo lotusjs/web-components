@@ -352,6 +352,14 @@
               "reflects": true
             },
             {
+              "kind": "field",
+              "name": "defaultChecked",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
               "kind": "method",
               "name": "handleClick",
               "privacy": "private"
