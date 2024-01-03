@@ -7,6 +7,8 @@
   "scripts": {
     "start": "lotus-scripts build --serve",
     "build": "lotus-scripts build",
+    "test": "web-test-runner --group default",
+    "test:component": "web-test-runner -- --watch --group",
     "mark:styles": "lotus-scripts mark-styles",
     "prepare": "is-ci || husky install"
   },
